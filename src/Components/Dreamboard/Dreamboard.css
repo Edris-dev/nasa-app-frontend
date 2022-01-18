@@ -1,5 +1,9 @@
-@import url('http://fonts.cdnfonts.com/css/xcelsion');
-
+@font-face {
+    font-family: 'Xcelsion';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Xcelsion'), url('https://fonts.cdnfonts.com/s/6339/xcelv3.woff') format('woff');
+}
 .dream-title{
   font-family: 'Xcelsion', sans-serif;
   color: rgb(230,230,230);
