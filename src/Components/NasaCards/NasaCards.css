@@ -1,0 +1,25 @@
+.loading-gif{
+  position: absolute;
+      margin-left: -300px;
+      margin-top: -100px;
+      z-index: 9999999;
+}
+
+.loader {
+  position: absolute;
+  background: linear-gradient(118deg, rgba(63,43,150,0.8) 0%, rgba(168,192,255,1) 100%);
+  top: 80px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999999;
+}
+
+.loader.active{
+  display: none;
+}
+
+.loading-text{
+  margin-top: 350px;
+  font-family: 'Xcelsion', sans-serif;
+}

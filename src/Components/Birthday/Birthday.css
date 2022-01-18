@@ -1,0 +1,33 @@
+.birthday-data{
+  font-size: 2em;
+    border-color: #2c98d3;
+    border-width: 4px;
+    border-style: solid;
+    padding: 15px;
+    border-radius: 25px;
+    font-family: 'Xcelsion';
+    background-color: rgba(40,155,214,.40);
+    color: white;
+    margin-top:5%;
+}
+.birthday-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bdaySub{
+  margin-left: 10px;
+  font-size: 0.6em;
+  background: transparent;
+  color: aliceblue;
+  font-weight: 600;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.bdaySub:hover{
+  border-radius: 15px;
+  background:aliceblue;
+  color: #2c98d3;
+  transition: all 0.2s ease-out;
+}
