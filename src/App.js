@@ -17,14 +17,13 @@ function App() {
     fetch("https://limitless-spire-03740.herokuapp.com/userInfo")
     .then(resp => resp.json())
     .then(data => setUserDb(data))
-    .then(() => console.log(userDb))
   }, [route,click])
 
   const routeChange = (location) => {
     setRoute(location);
   }
 
-  const updateDb = () =>{
+  const triggerDb = () =>{
     setClick(!click);
   }
 //render App
@@ -32,9 +31,9 @@ function App() {
     <div className="App">
       <Navbar routeChange={routeChange}/>
       {route === 'dreamboard'
-       ? <Dreamboard latestCall={() => userDb}/>
+       ? <Dreamboard latestCall={userDb}/>
        : route === 'home'
-        ? <NasaCards updateDb={updateDb}/>
+        ? <NasaCards triggerDb={triggerDb}/>
         : <Birthday/>
       }
     </div>

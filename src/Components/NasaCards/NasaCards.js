@@ -24,6 +24,10 @@ function NasaCards(props) {
     .then(data => setLikedList(data))
   }, [])
 
+  useEffect(() => {
+    props.triggerDb();
+  }, [likedList])
+
 
 //Update Db with new lke or comment
 const sendInfo = (adder) => {
@@ -62,8 +66,6 @@ const updateComment = ({updateCard, text}) => {
 
 
   const buttonClick =(titleClick,i) => {
-    props.updateDb();
-
     let clickedCard = likedList.find(({id}) => id === titleClick);
 
     //if card hasnt been clicked before, add to DB otherwise remove
@@ -88,7 +90,6 @@ const updateComment = ({updateCard, text}) => {
 
 //title will be used as identifier to update comments or likes
   const commentChange = ({id, commentText, i}) => {
-    props.updateDb();
     let textId = id;
 
     let commentedCard = likedList.find(({id}) => id === textId);
