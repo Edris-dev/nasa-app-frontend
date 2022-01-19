@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './Card.css';
 
 
@@ -7,7 +7,6 @@ function Card(props) {
   const [textHidden, setTextHidden] = useState(true);
   const [heart,setHeart] = useState(false);
   const [comment,setComment] = useState(false);
-  const [cancel, setCancel] = useState(false);
 
 //Depending on length of description, reduce amount visible until User accepts
   const SeeMore = ({children}) => {
@@ -46,10 +45,6 @@ function Card(props) {
     setComment(!comment);
   }
 
-  const cancelClicked = () =>{
-    setCancel(!cancel);
-    props.removeCard();
-  }
 
   return(
     <div class="card-wrapper" >
@@ -66,9 +61,15 @@ function Card(props) {
           ?<div className="bottom-section-dream-comment">
             <h3 className="dream-comment"> "{props.dreamComment}" </h3>
             <br/>
+            <div style={{marginLeft:"0px"}} className="heart-wrapper" onClick={() => props.removeCard() } >
+              <i className="fas fa-ban"></i>
+            </div>
            </div>
           :props.dreamDisplay && (props.dreamComment === undefined)
             ?<div className="bottom-section-dream">
+            <div style={{marginLeft:"0px"}} className="heart-wrapper" onClick={() => props.removeCard() } >
+              <i className="fas fa-ban"></i>
+            </div>
              </div>
             :props.dreamDisplay === false
             ?<div className="bottom-section" >

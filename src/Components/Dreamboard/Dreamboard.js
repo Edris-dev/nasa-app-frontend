@@ -1,40 +1,45 @@
-import React, {useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Card from '../NasaCards/Card/Card.js';
 import './Dreamboard.css';
 
 //component will maintain/display all items user has "liked" or commened on
-function Dreamboard(){
+function Dreamboard(props){
 
-  const [userLiked, setUserLiked] = useState([]);
+  const [userLiked, setUserLiked] = useState(props.latestCall);
   const [deleteCard, setDeleteCard] = useState();
 
 //call DB for all information
-  useEffect(() => {
-    fetch("https://limitless-spire-03740.herokuapp.com/userInfo")
-    .then(resp => resp.json())
-    .then(data => setUserLiked(data) )
-  },[] )
+  const removeInfo = (badCard) => {
+    fetch('https://limitless-spire-03740.herokuapp.com/removeEntry', {
+    method:'post',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({
+      oldCard:badCard,
+      })
+    })
+  }
 
+//remove card from "cloud" DB
   const delCard = (id) =>{
-    console.log("inside del");
     let textId = id;
     const updateDream = userLiked.filter(({id}) => id !== textId);
-    const remCard = userLiked.filter(({id}) => id === textId);
-    console.log("card removed is");
-    console.log(remCard);
 
-    setDeleteCard(remCard);
+    const remCard = userLiked.filter(({id}) => id === textId);
+    setDeleteCard(deleteCard);
+
     setUserLiked(updateDream);
+    removeInfo(remCard[0]);
 
   }
+
 
   return (
     <div>
       <h1 className="dream-title" > My Dreamboard </h1>
       <div className="card-container">
-      { userLiked.length > 0
-        ?userLiked.map((nasa,i) => {
-         return <Card
+      { userLiked?.length > 0
+        ? userLiked.map((nasa,i) => {
+          return <Card
                 key={nasa.id}
                 iter={nasa.id}
                 title={nasa.data.title}
@@ -45,7 +50,7 @@ function Dreamboard(){
                 dreamComment={nasa.comment}
                 removeCard={() => delCard(nasa.id)}
                 />})
-          :<img src='./empty_dreamboard.png' style={{borderRadius:"15px"}}/>
+          :<img alt="dreamboard_gallery" src='./empty_dreamboard.png' style={{borderRadius:"15px"}}/>
           }
       </div>
     </div>
