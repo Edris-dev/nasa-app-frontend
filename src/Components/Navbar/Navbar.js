@@ -23,7 +23,7 @@ function Navbar(props) {
         <ul className={clicked ? 'nav-menu active' : 'nav-menu'}>
           {MenuItems.map((item,index) => {
             return(
-              <li key={index}>
+              <li key={index} onClick={handleClick}>
                 <a className={item.cName} onClick={() => props.routeChange(item.link)}>
                   {item.title}
                 </a>
