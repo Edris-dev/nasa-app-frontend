@@ -6,8 +6,7 @@ Using NASA's open source API, this app will randomly call images that have been 
 
 ## Demo
 
-Insert gif or link to demo
-
+http://nasa-api-img.herokuapp.com/
 
 ## Deployment
 
@@ -26,6 +25,5 @@ In the cloned repository:
 
 ## Screenshots
 
-![App Screenshot](![image](https://user-images.githubusercontent.com/75594567/159138865-dd6c68e8-46b1-4aa7-9bab-3a5c9bddfe91.png)
-)
+[image](https://user-images.githubusercontent.com/75594567/159138865-dd6c68e8-46b1-4aa7-9bab-3a5c9bddfe91.png)
 
