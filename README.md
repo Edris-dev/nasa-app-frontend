@@ -25,5 +25,5 @@ In the cloned repository:
 
 ## Screenshots
 
-[image](https://user-images.githubusercontent.com/75594567/159138865-dd6c68e8-46b1-4aa7-9bab-3a5c9bddfe91.png)
+![image](https://user-images.githubusercontent.com/75594567/159138865-dd6c68e8-46b1-4aa7-9bab-3a5c9bddfe91.png)
 
