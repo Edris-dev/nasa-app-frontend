@@ -1,19 +1,31 @@
-# nasa-app-frontend
 
-Running instructions:
+# NASA Image of the Day 
 
-1.Clone this repo
-2.Run npm install
-3.Run npm start
+Using NASA's open source API, this app will randomly call images that have been Astronomy Photos of the Day (APOD). Images can be commented on or saved - all photos that have been interacted with will be saved in DreamBoard tab.
+ 
 
-Features:
-This App will randomly pull 50 Astronomy Photos of the Day (APOD) from Nasa Open Source API.  Photos will be rendered on Cards which will also contain additional information such as Date of Capture (DOC) and a description.
-Images will expand upon hover
+## Demo
+
+Insert gif or link to demo
 
 
-Cards may be "favorited" or commented on.
-All images "favorited" or commented on will appear on "Dreamboard" page found in navigation panel.
+## Deployment
 
-Cards may be removed from "Dreamboard"
+To deploy this project run, first clone the repo
 
-Additional page "Birthday" will return APOD on date entered (Birthday)
+In the cloned repository:
+
+```bash
+  npm install
+```
+
+```bash
+  npm run
+```
+
+
+## Screenshots
+
+![App Screenshot](![image](https://user-images.githubusercontent.com/75594567/159138865-dd6c68e8-46b1-4aa7-9bab-3a5c9bddfe91.png)
+)
+
